@@ -6,27 +6,28 @@ for (i=0; i < updateBtns.length;i++){
         console.log('productID',productID,'action',action)
         console.log('user',user)
         if (user === "AnonymousUser"){
-            updateUserOrder(productID, action)
+            console.log('user didnt logged in, fail add')
         } else {
-            console.log('user dont logged in, fail add')
+            updateUserOrder(productID,action)
         }
     })
 }
 
-function updateUserOrder(productID, action){
+function updateUserOrder(productID,action){
     console.log('user logged in, success add')
     var url = '/update_item/'
     fetch(url,{
         method: 'POST',
         headers:{
-            'Content-Type':'aplication/json'
+            'Content-Type':'aplication/json',
+            'X-CSRFToke': csrftoken ,
         },
         body: JSON.stringify({'productID': productID,'action': action})
     })
-    .then((response)=>{
-        response.json()
+    .then((response) =>{
+        return response.json()
     })
-    .then((data)=>{
+    .then((data) =>{
         console.log('data',data)
     })
 }
