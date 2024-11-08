@@ -38,10 +38,10 @@ def updateItem(request):
     order, created = Order.objects.get_or_create( customer = customer, complete = False)
     orderItem, created = OrderItem.objects.get_or_create( order = order, product = product)
     if action == 'add':
-        OrderItem.quantity +=1
+        orderItem.quantity +=1
     elif action == 'remove':
-        OrderItem.quantity -=1
-    OrderItem.save()
-    if OrderItem.quantity <=0:
-        OrderItem.delete()        
+        orderItem.quantity -=1
+    orderItem.save()
+    if orderItem.quantity <=0:
+        orderItem.delete()        
     return JsonResponse('added',safe=False)
