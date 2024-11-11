@@ -28,19 +28,18 @@
                             <div class="d-flex flex-row align-items-center mb-4">
                               <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                               <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="text" id="form3Example1c" class="form-control" />
+                                <input type="text" name="username" id="form3Example1c" class="form-control" />
                                 <label class="form-label" for="form3Example1c">User Name</label>
                                 
                               </div>
                             </div>
           
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                    <input type="text" id="form3Example1c" class="form-control" />
-                                  <label class="form-label" for="form3Example3c">Password</label>
-                                  
-                                </div>
+                              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                              <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                <input type="text"  name="password" id="form3Example4c" class="form-control" />
+                                <label class="form-label" for="form3Example4c">Password</label>
+                              </div>
                             </div>
           
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
@@ -48,7 +47,9 @@
                             </div>
 
                             <p class="text-center h6 fw-bold mb-5 mx-1 mx-md-4 mt-4">You don't have a account? <a href = {% url "register" %} >Register</a></p>
-          
+                            {% for message in messages  %}
+                            <p id='message' class="text-center h6 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{message}}</p>
+                            {% endfor %}
                           </form>
           
                         </div>
