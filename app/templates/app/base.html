@@ -89,9 +89,12 @@
                   <span><a href = "{% url "logout" %}"> Logout </a> </span>
                 </div>
                 
-                <div class='form-inline my-2 my-lg-0'style ="visibility: {{user_not_login}}">
-                  <a class="nav-link disabled" href="{% url "login" %}">Đăng nhập</a>
-                  <a class="nav-link disabled" href="{% url "register" %}">Đăng ký</a>
+                <div class='form-inline my-2 my-lg-0' style ="visibility: {{user_not_login}}">
+                  <a class="nav-link" href="{% url "login" %}"> Đăng nhập</a>
+                </div>
+
+                <div class='form-inline my-2 my-lg-0' style ="visibility: {{user_not_login}}">
+                  <a class="nav-link" href="{% url "register" %}"> Đăng ký </a>
                 </div>
               
               <div class='form-inline my-2 my-lg-0'>

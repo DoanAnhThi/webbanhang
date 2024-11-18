@@ -65,7 +65,7 @@ def home(request):
         user_login = "show"
     else:
         items = []
-        order = {'order.get_cart_items':0,'order.get_cart_total':0}
+        order = {'get_cart_items':0,'get_cart_total':0}
         cartItems = order['get_cart_items']
         user_login = "hidden"
         user_not_login = "show"
